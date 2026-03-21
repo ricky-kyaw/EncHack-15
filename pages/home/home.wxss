@@ -1,0 +1,239 @@
+page {
+  background: #080808;
+  color: #ffffff;
+  font-family: -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+.container {
+  padding-bottom: 100rpx;
+  background: #080808;
+}
+
+.header {
+  padding: 80rpx 36rpx 32rpx;
+}
+
+.header-eyebrow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18rpx;
+}
+
+.status-dot {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background: #00e5a0;
+  margin-right: 10rpx;
+  box-shadow: 0 0 8rpx #00e5a055;
+}
+
+.status-text {
+  font-size: 20rpx;
+  color: #00e5a0;
+  font-weight: 500;
+  letter-spacing: 2rpx;
+}
+
+.header-title {
+  display: block;
+  font-size: 56rpx;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -1rpx;
+  line-height: 1.1;
+}
+
+.header-sub {
+  display: block;
+  font-size: 24rpx;
+  color: #444444;
+  margin-top: 8rpx;
+  font-weight: 300;
+  letter-spacing: 1rpx;
+}
+
+.card-scroll {
+  width: 100%;
+  padding: 12rpx 0 36rpx;
+}
+
+.card-row {
+  display: inline-flex;
+  padding: 8rpx 36rpx;
+}
+
+.card {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 272rpx;
+  height: 168rpx;
+  border-radius: 26rpx;
+  padding: 26rpx;
+  box-sizing: border-box;
+  margin-right: 20rpx;
+  border: 1rpx solid rgba(255,255,255,0.07);
+  transition: all 0.3s;
+}
+
+.card-active {
+  border-color: rgba(255,255,255,0.18);
+  transform: translateY(-6rpx) scale(1.02);
+}
+
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-logo {
+  font-size: 40rpx;
+}
+
+.card-chip {
+  width: 32rpx;
+  height: 24rpx;
+  border-radius: 5rpx;
+  background: rgba(255,255,255,0.12);
+  border: 1rpx solid rgba(255,255,255,0.18);
+}
+
+.card-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-name {
+  display: block;
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3rpx;
+}
+
+.card-meta-row {
+  display: flex;
+  align-items: baseline;
+  margin-top: 4rpx;
+}
+
+.card-points {
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.card-pts-label {
+  font-size: 16rpx;
+  color: rgba(255,255,255,0.35);
+  margin-left: 4rpx;
+}
+
+.card-level {
+  display: block;
+  font-size: 16rpx;
+  color: rgba(255,255,255,0.35);
+  margin-top: 2rpx;
+  font-weight: 300;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 36rpx 24rpx;
+}
+
+.section-title-row {
+  display: flex;
+  align-items: center;
+}
+
+.accent-bar {
+  width: 5rpx;
+  height: 32rpx;
+  border-radius: 3rpx;
+  margin-right: 14rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3rpx;
+}
+
+.see-all {
+  font-size: 22rpx;
+  color: #3a3a3a;
+  font-weight: 400;
+}
+
+.deals-container {
+  padding: 0 36rpx;
+}
+
+.deal-tile {
+  background: #111111;
+  border-radius: 20rpx;
+  padding: 28rpx;
+  margin-bottom: 14rpx;
+}
+
+.deal-tile-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.deal-tag {
+  border-radius: 7rpx;
+  padding: 7rpx 16rpx;
+  display: inline-block;
+}
+
+.deal-tag-text {
+  font-size: 19rpx;
+  font-weight: 600;
+  letter-spacing: 0.3rpx;
+}
+
+.deal-expiry {
+  font-size: 19rpx;
+  color: #2e2e2e;
+}
+
+.deal-title {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin-bottom: 10rpx;
+  letter-spacing: -0.2rpx;
+  line-height: 1.35;
+}
+
+.deal-desc {
+  display: block;
+  font-size: 22rpx;
+  color: #4a4a4a;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.cta-btn {
+  border-radius: 16rpx;
+  padding: 28rpx;
+  text-align: center;
+  margin-top: 6rpx;
+  background: transparent;
+}
+
+.cta-btn-text {
+  font-size: 26rpx;
+  font-weight: 600;
+  letter-spacing: 0.3rpx;
+}

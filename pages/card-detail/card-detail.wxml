@@ -1,0 +1,34 @@
+<view class="container" wx:if="{{card}}">
+
+  <view class="hero" style="background: linear-gradient(160deg, {{card.color}}dd 0%, #080808 70%);">
+    <view class="hero-badge" style="border-color: {{card.accentColor}}44;">
+      <text class="hero-logo">{{card.logo}}</text>
+    </view>
+    <text class="hero-name">{{card.name}}</text>
+    <text class="hero-level">{{card.memberLevel}}</text>
+    <view class="hero-points-pill" style="background: {{card.accentColor}}18; border: 1rpx solid {{card.accentColor}}44;">
+      <text class="hero-points" style="color: {{card.accentColor}}">{{card.points}}</text>
+      <text class="hero-pts-label"> points available</text>
+    </view>
+  </view>
+
+  <view class="divider" style="background: linear-gradient(90deg, {{card.accentColor}}44, transparent);"></view>
+
+  <view class="deals-list">
+    <text class="list-heading">All Deals</text>
+    <view wx:for="{{card.deals}}" wx:key="id" class="deal-card" style="border-top: 2rpx solid {{card.accentColor}}33;">
+      <view class="deal-row-top">
+        <view class="deal-tag" style="background: {{item.tagColor}}18; border: 1rpx solid {{item.tagColor}}55;">
+          <text class="deal-tag-text" style="color: {{item.tagColor}}">{{item.tag}}</text>
+        </view>
+        <text class="deal-expiry">{{item.expiry}}</text>
+      </view>
+      <text class="deal-title">{{item.title}}</text>
+      <text class="deal-desc">{{item.description}}</text>
+      <view class="claim-btn" style="background: {{card.accentColor}}; box-shadow: 0 4rpx 24rpx {{card.accentColor}}55;">
+        <text class="claim-btn-text">Claim Deal</text>
+      </view>
+    </view>
+  </view>
+
+</view>
