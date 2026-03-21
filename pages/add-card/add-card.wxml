@@ -1,0 +1,27 @@
+<view class="container">
+  <text class="page-title">Add a New Card</text>
+  <text class="page-sub">Local shops, cafes, gyms — anything with a loyalty scheme.</text>
+
+  <view class="field">
+    <text class="field-label">Card Name</text>
+    <input class="field-input" placeholder="e.g. Nino Cafe" bindinput="onNameInput" />
+  </view>
+
+  <view class="field">
+    <text class="field-label">Card Type</text>
+    <view class="type-row">
+      <view class="type-btn {{cardType === 'loyalty' ? 'type-btn-active' : ''}}"
+        bindtap="onSelectType" data-type="loyalty">
+        <text class="type-btn-text">Loyalty</text>
+      </view>
+      <view class="type-btn {{cardType === 'crypto' ? 'type-btn-active' : ''}}"
+        bindtap="onSelectType" data-type="crypto">
+        <text class="type-btn-text">Web3</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="submit-btn" bindtap="onSubmit">
+    <text class="submit-btn-text">Add Card</text>
+  </view>
+</view>

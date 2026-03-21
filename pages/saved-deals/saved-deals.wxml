@@ -1,0 +1,27 @@
+<view class="container">
+  <text class="page-title">Saved Deals</text>
+
+  <view wx:if="{{savedDealsList.length === 0}}" class="empty-state">
+    <text class="empty-icon">🔖</text>
+    <text class="empty-title">Nothing saved yet</text>
+    <text class="empty-sub">Tap Save on any deal to bookmark it here.</text>
+  </view>
+
+  <view wx:for="{{savedDealsList}}" wx:key="id" class="deal-card">
+    <view class="deal-card-header">
+      <text class="deal-card-logo">{{item.cardLogo}}</text>
+      <text class="deal-card-source" style="color: {{item.cardAccent}}">{{item.cardName}}</text>
+    </view>
+    <view class="deal-tag-row">
+      <view class="deal-tag" style="background: {{item.tagColor}}18; border: 1rpx solid {{item.tagColor}}55;">
+        <text class="deal-tag-text" style="color: {{item.tagColor}}">{{item.tag}}</text>
+      </view>
+      <text class="deal-expiry">{{item.expiry}}</text>
+    </view>
+    <text class="deal-title">{{item.title}}</text>
+    <text class="deal-desc">{{item.description}}</text>
+    <view class="unsave-btn" bindtap="onUnsave" data-dealid="{{item.id}}">
+      <text class="unsave-text" style="color: {{item.cardAccent}}">● Saved — tap to remove</text>
+    </view>
+  </view>
+</view>

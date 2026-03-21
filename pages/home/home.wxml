@@ -1,33 +1,75 @@
 <view class="container">
 
-  <view class="header">
-    <view class="header-eyebrow">
-      <view class="status-dot"></view>
-      <text class="status-text">3 active cards</text>
+  <!-- Onboarding Overlay -->
+  <view class="onboarding" wx:if="{{showOnboarding}}">
+    <view class="onboarding-inner">
+      <text class="onboarding-title">Setting up your passport...</text>
+      <view class="onboarding-cards">
+        <view
+          wx:for="{{cards}}"
+          wx:key="id"
+          class="onboarding-card-row {{onboardingStep > index ? 'onboarding-card-visible' : ''}}"
+        >
+          <text class="onboarding-card-logo">{{item.logo}}</text>
+          <text class="onboarding-card-name">{{item.name}}</text>
+          <text class="onboarding-check">✓</text>
+        </view>
+      </view>
     </view>
-    <text class="header-title">Deal Passport</text>
-    <text class="header-sub">Your loyalty universe</text>
   </view>
 
+  <!-- Header -->
+    <view class="header">
+    <view class="header-top-row">
+        <view>
+        <view class="header-eyebrow">
+            <view class="status-dot"></view>
+            <text class="status-text">{{cards.length}} active cards</text>
+        </view>
+        <text class="header-title">Deal Passport</text>
+        <text class="header-sub">Your loyalty universe</text>
+        </view>
+        <view class="header-actions">
+            <view class="icon-btn" bindtap="onViewSaved">
+            <text class="icon-btn-text">🔖</text>
+            </view>
+            <view class="add-btn" bindtap="onAddCard">
+            <text class="add-btn-text">+</text>
+            </view>
+        </view>
+        </view>
+    </view>
+
+  <!-- Card Carousel -->
   <scroll-view class="card-scroll" scroll-x="true" show-scrollbar="false">
     <view class="card-row">
       <view
         wx:for="{{cards}}"
         wx:key="id"
-        class="card {{activeCardIndex === index ? 'card-active' : ''}}"
-        style="background: linear-gradient(135deg, {{item.color}}ee 0%, {{item.color}}99 100%); box-shadow: {{activeCardIndex === index ? '0 8px 40px ' + item.accentColor + '55' : '0 2px 12px rgba(0,0,0,0.5)'}};"
+        class="card {{activeCardIndex === index ? 'card-active' : ''}} {{item.cardType === 'crypto' ? 'card-crypto' : ''}}"
+        style="background: linear-gradient(135deg, {{item.color}}ee, {{item.color}}99); box-shadow: {{activeCardIndex === index ? '0 8px 40px ' + item.accentColor + '44' : 'none'}};"
         bindtap="onSelectCard"
         data-index="{{index}}"
       >
+        <!-- Deal count badge -->
+        <view class="badge" style="background: {{item.accentColor}}">
+          <text class="badge-text">{{item.deals.length}}</text>
+        </view>
+
         <view class="card-top-row">
           <text class="card-logo">{{item.logo}}</text>
-          <view class="card-chip"></view>
+          <view class="card-chip {{item.cardType === 'crypto' ? 'card-chip-crypto' : ''}}"></view>
         </view>
+
         <view class="card-bottom">
           <text class="card-name">{{item.name}}</text>
-          <view class="card-meta-row">
+          <view class="card-meta-row" wx:if="{{item.cardType !== 'crypto'}}">
             <text class="card-points" style="color: {{item.accentColor}}">{{item.points}}</text>
             <text class="card-pts-label"> pts</text>
+          </view>
+          <view class="card-meta-row" wx:if="{{item.cardType === 'crypto'}}">
+            <text class="card-points" style="color: {{item.accentColor}}">{{item.ethBalance}}</text>
+            <text class="card-pts-label"> ETH</text>
           </view>
           <text class="card-level">{{item.memberLevel}}</text>
         </view>
@@ -35,12 +77,13 @@
     </view>
   </scroll-view>
 
+  <!-- Active Card Deals Preview -->
   <view class="section-header">
     <view class="section-title-row">
       <view class="accent-bar" style="background: {{cards[activeCardIndex].accentColor}}"></view>
       <text class="section-title">{{cards[activeCardIndex].name}} Deals</text>
     </view>
-    <text class="see-all" bindtap="onViewDeals" data-id="{{cards[activeCardIndex].id}}">See all</text>
+    <text class="see-all" bindtap="onViewDeals" data-id="{{cards[activeCardIndex].id}}">See all →</text>
   </view>
 
   <view class="deals-container">
@@ -53,18 +96,30 @@
       style="border-top: 2rpx solid {{cards[activeCardIndex].accentColor}}33;"
     >
       <view class="deal-tile-top">
-        <view class="deal-tag" style="background: {{item.tagColor}}18; border: 1rpx solid {{item.tagColor}}66;">
+        <view class="deal-tag" style="background: {{item.tagColor}}18; border: 1rpx solid {{item.tagColor}}55;">
           <text class="deal-tag-text" style="color: {{item.tagColor}}">{{item.tag}}</text>
         </view>
         <text class="deal-expiry">{{item.expiry}}</text>
       </view>
       <text class="deal-title">{{item.title}}</text>
       <text class="deal-desc">{{item.description}}</text>
+      <view class="deal-actions">
+        <view
+          class="bookmark-btn"
+          bindtap="onToggleSave"
+          data-dealid="{{item.id}}"
+        >
+          <text class="bookmark-icon">{{savedDeals[item.id] ? '🔖' : '🔖'}}</text>
+          <text class="bookmark-text" style="color: {{savedDeals[item.id] ? cards[activeCardIndex].accentColor : '#333'}}">
+            {{savedDeals[item.id] ? 'Saved' : 'Save'}}
+          </text>
+        </view>
+      </view>
     </view>
 
     <view
       class="cta-btn"
-      style="border: 1rpx solid {{cards[activeCardIndex].accentColor}}; box-shadow: 0 0 20rpx {{cards[activeCardIndex].accentColor}}33;"
+      style="border: 1rpx solid {{cards[activeCardIndex].accentColor}}; box-shadow: 0 0 20rpx {{cards[activeCardIndex].accentColor}}22;"
       bindtap="onViewDeals"
       data-id="{{cards[activeCardIndex].id}}"
     >

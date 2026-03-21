@@ -1,0 +1,23 @@
+page { background: #080808; font-family: -apple-system, sans-serif; }
+.container { padding: 64rpx 36rpx; }
+.page-title { display: block; font-size: 48rpx; font-weight: 800; color: #fff; letter-spacing: -1rpx; margin-bottom: 12rpx; }
+.page-sub { display: block; font-size: 24rpx; color: #333; line-height: 1.6; margin-bottom: 56rpx; }
+.field { margin-bottom: 40rpx; }
+.field-label { display: block; font-size: 20rpx; color: #444; letter-spacing: 2rpx; margin-bottom: 16rpx; }
+.field-input {
+  background: #111; border-radius: 14rpx; padding: 28rpx;
+  font-size: 28rpx; color: #fff; border: 1rpx solid #1e1e1e;
+  width: 100%; box-sizing: border-box;
+}
+.type-row { display: flex; gap: 16rpx; }
+.type-btn {
+  flex: 1; padding: 24rpx; border-radius: 14rpx;
+  background: #111; border: 1rpx solid #1e1e1e; text-align: center;
+}
+.type-btn-active { border-color: #00e5a0; background: #00e5a018; }
+.type-btn-text { font-size: 26rpx; color: #fff; font-weight: 600; }
+.submit-btn {
+  background: #fff; border-radius: 16rpx; padding: 32rpx;
+  text-align: center; margin-top: 20rpx;
+}
+.submit-btn-text { font-size: 28rpx; font-weight: 800; color: #000; }

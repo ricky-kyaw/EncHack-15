@@ -1,0 +1,21 @@
+page { background: #080808; font-family: -apple-system, sans-serif; }
+.container { padding: 64rpx 36rpx 100rpx; }
+.page-title { display: block; font-size: 48rpx; font-weight: 800; color: #fff; letter-spacing: -1rpx; margin-bottom: 40rpx; }
+
+.empty-state { display: flex; flex-direction: column; align-items: center; padding: 120rpx 0; }
+.empty-icon { font-size: 80rpx; margin-bottom: 24rpx; }
+.empty-title { display: block; font-size: 32rpx; font-weight: 700; color: #333; margin-bottom: 12rpx; }
+.empty-sub { display: block; font-size: 24rpx; color: #222; text-align: center; line-height: 1.6; }
+
+.deal-card { background: #111; border-radius: 20rpx; padding: 28rpx; margin-bottom: 16rpx; }
+.deal-card-header { display: flex; align-items: center; margin-bottom: 16rpx; }
+.deal-card-logo { font-size: 28rpx; margin-right: 12rpx; }
+.deal-card-source { font-size: 20rpx; font-weight: 600; letter-spacing: 1rpx; }
+.deal-tag-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14rpx; }
+.deal-tag { border-radius: 7rpx; padding: 7rpx 16rpx; display: inline-block; }
+.deal-tag-text { font-size: 18rpx; font-weight: 600; }
+.deal-expiry { font-size: 18rpx; color: #2e2e2e; }
+.deal-title { display: block; font-size: 28rpx; font-weight: 700; color: #f0f0f0; margin-bottom: 10rpx; line-height: 1.35; }
+.deal-desc { display: block; font-size: 22rpx; color: #444; line-height: 1.6; margin-bottom: 20rpx; }
+.unsave-btn { padding: 8rpx 0; }
+.unsave-text { font-size: 22rpx; font-weight: 600; }
