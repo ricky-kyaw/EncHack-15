@@ -1,18 +1,18 @@
-# Deal Passport 🃏
+# Luffa Passport 🃏
 
 > A unified loyalty and discount miniapp built on the Luffa SuperBox platform.
-> Built at Encode Hackathon 2025 by Team EncHackApp-15.
+> Built at Encode Hackathon 2025 by Team Fuzzy.
 
 ---
 
 ## What It Does
 
-Deal Passport is a super-wallet for loyalty cards. Instead of juggling separate apps
+Luffa Passport is a super-wallet for loyalty cards. Instead of juggling separate apps
 for every coffee shop, restaurant, and membership scheme, users store all their cards
 in one place. Tapping a card instantly surfaces all deals, discounts, and rewards
 available for that card — personalised, contextual, and instant.
 
-Built for Kingston University students, starting with local merchants:
+Built for everyone, starting with local merchants:
 - 🍽️ KU Eat Central (campus canteen)
 - ☕ Nino Cafe (Fairfield Park)
 - 🥙 Cappadocia Kingston (student favourite)

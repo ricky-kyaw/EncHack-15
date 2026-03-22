@@ -1,7 +1,7 @@
 {
-  "name": "deal-passport-backend",
+  "name": "luffa-passport-backend",
   "version": "1.0.0",
-  "description": "REST API backend for Deal Passport miniapp",
+  "description": "REST API backend for Luffa Passport miniapp",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

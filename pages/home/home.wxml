@@ -26,7 +26,7 @@
           <view class="status-dot"></view>
           <text class="status-text">{{cards.length}} active cards</text>
         </view>
-        <text class="header-title">Deal Passport</text>
+        <text class="header-title">Luffa Passport</text>
         <text class="header-sub">Your loyalty universe</text>
         <text class="merchant-portal-link" bindtap="onViewAnalytics">Merchant Portal ↗</text>
       </view>

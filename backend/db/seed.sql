@@ -1,5 +1,5 @@
 -- ============================================================
--- DEAL PASSPORT — Seed Data (Kingston University merchants)
+-- LUFFA PASSPORT — Seed Data (Kingston University merchants)
 -- ============================================================
 
 INSERT INTO merchants (name, verified) VALUES

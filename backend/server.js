@@ -1,5 +1,5 @@
 /**
- * DEAL PASSPORT — Express Server
+ * LUFFA PASSPORT — Express Server
  *
  * Entry point for the REST API.
  * The Luffa miniapp communicates with this via wx.request().
@@ -33,7 +33,7 @@ app.use('/api/deals', dealRoutes)
 app.get('/health', (req, res) => res.json({ status: 'ok' }))
 
 app.listen(PORT, () => {
-  console.log(`Deal Passport API running on port ${PORT}`)
+  console.log(`Luffa Passport API running on port ${PORT}`)
 })
 
 module.exports = app

@@ -1,8 +1,8 @@
 -- ============================================================
--- DEAL PASSPORT — PostgreSQL Schema
+-- LUFFA PASSPORT — PostgreSQL Schema
 -- ============================================================
 -- Run this once to initialise the database.
--- psql -U postgres -d dealpassport -f schema.sql
+-- psql -U postgres -d luffapassport -f schema.sql
 -- ============================================================
 
 CREATE EXTENSION IF NOT EXISTS "pgcrypto"; -- for gen_random_uuid()
