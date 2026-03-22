@@ -17,15 +17,21 @@
     <text class="hero-level">{{card.memberLevel}}</text>
 
     <!-- Points pill (loyalty) -->
-    <view class="hero-points-pill" wx:if="{{card.cardType !== 'crypto'}}"
-      style="background: {{card.accentColor}}18; border: 1rpx solid {{card.accentColor}}44;">
+    <view
+      class="hero-points-pill"
+      wx:if="{{card.cardType !== 'crypto'}}"
+      style="background: {{card.accentColor}}18; border: 1rpx solid {{card.accentColor}}44;"
+    >
       <text class="hero-points" style="color: {{card.accentColor}}">{{card.points}}</text>
       <text class="hero-pts-label"> points available</text>
     </view>
 
     <!-- ETH balance (crypto) -->
-    <view class="hero-points-pill" wx:if="{{card.cardType === 'crypto'}}"
-      style="background: {{card.accentColor}}18; border: 1rpx solid {{card.accentColor}}44;">
+    <view
+      class="hero-points-pill"
+      wx:if="{{card.cardType === 'crypto'}}"
+      style="background: {{card.accentColor}}18; border: 1rpx solid {{card.accentColor}}44;"
+    >
       <text class="hero-points" style="color: {{card.accentColor}}">{{card.ethBalance}}</text>
       <text class="hero-pts-label"> ETH · {{card.usdValue}}</text>
     </view>
@@ -45,17 +51,32 @@
     </view>
 
     <!-- Barcode panel -->
-    <view class="barcode-panel" wx:if="{{showBarcode}}"
-      style="border: 1rpx solid {{card.accentColor}}33;">
+    <view
+      class="barcode-panel"
+      wx:if="{{showBarcode}}"
+      style="border: 1rpx solid {{card.accentColor}}33;"
+    >
       <text class="barcode-label">{{card.cardType === 'crypto' ? 'Wallet Address' : 'Member Barcode'}}</text>
       <view class="barcode-lines">
-        <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]}}" wx:key="*this"
+        <view
+          wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]}}"
+          wx:key="*this"
           class="barcode-line"
-          style="height: {{index % 3 === 0 ? '48rpx' : index % 2 === 0 ? '36rpx' : '40rpx'}}; background: {{card.accentColor}}; opacity: {{index % 4 === 0 ? '0.3' : '1'}}; width: {{index % 5 === 0 ? '6rpx' : '3rpx'}};">
-        </view>
+          style="height: {{index % 3 === 0 ? '48rpx' : index % 2 === 0 ? '36rpx' : '40rpx'}}; background: {{card.accentColor}}; opacity: {{index % 4 === 0 ? '0.3' : '1'}}; width: {{index % 5 === 0 ? '6rpx' : '3rpx'}};"
+        ></view>
       </view>
       <text class="barcode-number">{{card.barcode}}</text>
     </view>
+
+    <!-- Merchant View — loyalty cards only, not crypto -->
+    <view
+      wx:if="{{card.cardType !== 'crypto'}}"
+      class="merchant-view-btn"
+      bindtap="onViewAnalytics"
+    >
+      <text class="merchant-view-text" style="color: {{card.accentColor}}">Merchant View ↗</text>
+    </view>
+
   </view>
 
   <view class="divider" style="background: linear-gradient(90deg, {{card.accentColor}}44, transparent);"></view>
@@ -63,11 +84,17 @@
   <!-- Deals -->
   <view class="deals-list">
     <text class="list-heading">All Deals</text>
-    <view wx:for="{{card.deals}}" wx:key="id" class="deal-card"
-      style="border-top: 2rpx solid {{card.accentColor}}33;">
+    <view
+      wx:for="{{card.deals}}"
+      wx:key="id"
+      class="deal-card"
+      style="border-top: 2rpx solid {{card.accentColor}}33;"
+    >
       <view class="deal-row-top">
-        <view class="deal-tag"
-          style="background: {{item.tagColor}}18; border: 1rpx solid {{item.tagColor}}55;">
+        <view
+          class="deal-tag"
+          style="background: {{item.tagColor}}18; border: 1rpx solid {{item.tagColor}}55;"
+        >
           <text class="deal-tag-text" style="color: {{item.tagColor}}">{{item.tag}}</text>
         </view>
         <text class="deal-expiry">{{item.expiry}}</text>
@@ -75,16 +102,19 @@
       <text class="deal-title">{{item.title}}</text>
       <text class="deal-desc">{{item.description}}</text>
       <view class="deal-actions">
-        <view class="claim-btn"
+        <view
+          class="claim-btn"
           style="background: {{card.accentColor}}; box-shadow: 0 4rpx 20rpx {{card.accentColor}}44;"
           bindtap="onClaim"
-          data-title="{{item.title}}">
+          data-title="{{item.title}}"
+        >
           <text class="claim-btn-text">Claim</text>
         </view>
         <view class="save-btn" bindtap="onToggleSave" data-dealid="{{item.id}}">
-          <text class="save-btn-text" style="color: {{savedDeals[item.id] ? card.accentColor : '#333'}}">
-            {{savedDeals[item.id] ? '● Saved' : '○ Save'}}
-          </text>
+          <text
+            class="save-btn-text"
+            style="color: {{savedDeals[item.id] ? card.accentColor : '#333'}}"
+          >{{savedDeals[item.id] ? '● Saved' : '○ Save'}}</text>
         </view>
       </view>
     </view>

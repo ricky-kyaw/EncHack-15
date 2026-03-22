@@ -3,6 +3,7 @@ page {
   color: #ffffff;
   font-family: -apple-system, sans-serif;
 }
+
 .container { padding-bottom: 100rpx; }
 
 /* Onboarding */
@@ -48,13 +49,16 @@ page {
 .status-text { font-size: 20rpx; color: #00e5a0; font-weight: 500; letter-spacing: 2rpx; }
 .header-title { display: block; font-size: 56rpx; font-weight: 800; color: #fff; letter-spacing: -1rpx; }
 .header-sub { display: block; font-size: 24rpx; color: #333; margin-top: 8rpx; font-weight: 300; }
-.add-btn {
-  width: 64rpx; height: 64rpx; border-radius: 50%;
-  border: 1rpx solid #222;
-  display: flex; align-items: center; justify-content: center;
-  margin-top: 8rpx;
+.merchant-portal-link {
+  display: block;
+  font-size: 18rpx;
+  color: #2a2a2a;
+  margin-top: 10rpx;
+  font-weight: 500;
+  letter-spacing: 0.5rpx;
 }
-.add-btn-text { font-size: 36rpx; color: #444; line-height: 1; }
+
+/* Header actions */
 .header-actions { display: flex; align-items: center; gap: 16rpx; margin-top: 8rpx; }
 .icon-btn {
   width: 64rpx; height: 64rpx; border-radius: 50%;
@@ -62,6 +66,13 @@ page {
   display: flex; align-items: center; justify-content: center;
 }
 .icon-btn-text { font-size: 28rpx; }
+.add-btn {
+  width: 64rpx; height: 64rpx; border-radius: 50%;
+  border: 1rpx solid #222;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 8rpx;
+}
+.add-btn-text { font-size: 36rpx; color: #444; line-height: 1; }
 
 /* Cards */
 .card-scroll { width: 100%; padding: 12rpx 0 36rpx; }
@@ -90,6 +101,7 @@ page {
 }
 .badge-text { font-size: 18rpx; color: #000; font-weight: 800; }
 
+/* Card internals */
 .card-top-row { display: flex; justify-content: space-between; align-items: center; }
 .card-logo { font-size: 38rpx; }
 .card-chip {

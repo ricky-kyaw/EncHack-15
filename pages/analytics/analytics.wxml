@@ -1,0 +1,89 @@
+<view class="container" wx:if="{{merchant}}">
+
+  <!-- Header -->
+  <view class="header">
+    <view class="header-eyebrow">
+      <view class="live-dot"></view>
+      <text class="live-text">MERCHANT DASHBOARD</text>
+    </view>
+    <view class="merchant-hero">
+      <view class="merchant-logo-wrap" style="background: {{merchant.accentColor}}18; border: 1rpx solid {{merchant.accentColor}}33;">
+        <text class="merchant-logo">{{merchant.logo}}</text>
+      </view>
+      <view>
+        <text class="page-title">{{merchant.name}}</text>
+        <text class="page-sub">{{merchant.category}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- KPI Row -->
+  <scroll-view scroll-x="true" show-scrollbar="false" class="kpi-scroll">
+    <view class="kpi-row">
+      <view class="kpi-card">
+        <text class="kpi-value" style="color: {{merchant.accentColor}}">{{stats.totalMembers}}</text>
+        <text class="kpi-label">Total Members</text>
+      </view>
+      <view class="kpi-card">
+        <text class="kpi-value" style="color: {{merchant.accentColor}}">{{stats.totalClaims}}</text>
+        <text class="kpi-label">Deal Claims</text>
+      </view>
+      <view class="kpi-card">
+        <text class="kpi-value" style="color: {{merchant.accentColor}}">{{stats.savedDeals}}</text>
+        <text class="kpi-label">Saved Deals</text>
+      </view>
+      <view class="kpi-card">
+        <text class="kpi-value" style="color: {{merchant.accentColor}}">{{stats.weeklyVisits}}×</text>
+        <text class="kpi-label">Avg Weekly Visits</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- Weekly Chart -->
+  <view class="section">
+    <text class="section-title">Weekly Deal Claims</text>
+    <view class="chart">
+      <view wx:for="{{weeklyData}}" wx:key="day" class="chart-col">
+        <view class="bar-wrap">
+          <view
+            class="bar"
+            style="height: {{item.height}}%; background: linear-gradient(180deg, {{merchant.accentColor}}, {{merchant.accentColor}}22);"
+          ></view>
+        </view>
+        <text class="bar-label">{{item.day}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Top Deals -->
+  <view class="section">
+    <text class="section-title">Deal Performance</text>
+    <view wx:for="{{topDeals}}" wx:key="title" class="deal-row">
+      <view class="deal-row-top">
+        <text class="deal-row-title">{{item.title}}</text>
+        <text class="deal-row-count" style="color: {{merchant.accentColor}}">{{item.claims}}</text>
+      </view>
+      <view class="deal-bar-track">
+        <view
+          class="deal-bar-fill"
+          style="width: {{item.bar}}%; background: {{merchant.accentColor}};"
+        ></view>
+      </view>
+      <text class="deal-row-tag">{{item.tag}}</text>
+    </view>
+  </view>
+
+  <!-- Cross-Retail Insight -->
+  <view class="section">
+    <text class="section-title">Cross-Retail Insight</text>
+    <text class="section-sub">Powered by Deal Passport's cross-merchant data layer.</text>
+    <view class="insight-card" style="border: 1rpx solid {{crossInsight.color}}33;">
+      <text class="insight-stat" style="color: {{crossInsight.color}}">{{crossInsight.stat}}</text>
+      <text class="insight-text">{{crossInsight.text}}</text>
+      <view class="insight-footer">
+        <text class="insight-footer-text">Only visible through Deal Passport</text>
+      </view>
+    </view>
+  </view>
+
+</view>

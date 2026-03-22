@@ -1,0 +1,54 @@
+<view class="container">
+
+  <text class="page-title">Add a Card</text>
+  <text class="page-sub">Browse registered merchants or add your own.</text>
+
+  <!-- Search -->
+  <view class="search-bar">
+    <text class="search-icon">⌕</text>
+    <input
+      class="search-input"
+      placeholder="Search merchants..."
+      placeholder-class="search-placeholder"
+      bindinput="onSearch"
+    />
+  </view>
+
+  <!-- Merchant List -->
+  <view class="merchant-list">
+    <view
+      wx:for="{{filteredMerchants}}"
+      wx:key="id"
+      class="merchant-row"
+    >
+      <view class="merchant-logo-wrap" style="background: {{item.color}}22; border: 1rpx solid {{item.color}}55;">
+        <text class="merchant-logo">{{item.logo}}</text>
+      </view>
+
+      <view class="merchant-info">
+        <text class="merchant-name">{{item.name}}</text>
+        <text class="merchant-category">{{item.category}}</text>
+        <text class="merchant-desc">{{item.description}}</text>
+        <text class="merchant-deals" style="color: {{item.accentColor}}">{{item.dealCount}} deals available</text>
+      </view>
+
+      <view
+        class="add-btn {{addedCardIds.indexOf(item.id) !== -1 ? 'add-btn-added' : ''}}"
+        style="border-color: {{addedCardIds.indexOf(item.id) !== -1 ? '#333' : item.accentColor}};"
+        bindtap="onAddCard"
+        data-id="{{item.id}}"
+      >
+        <text
+          class="add-btn-text"
+          style="color: {{addedCardIds.indexOf(item.id) !== -1 ? '#333' : item.accentColor}};"
+        >{{addedCardIds.indexOf(item.id) !== -1 ? '✓' : '+'}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Custom Card CTA -->
+  <view class="custom-cta" bindtap="onCustomCard">
+    <text class="custom-cta-text">Don't see your card? Add it manually →</text>
+  </view>
+
+</view>

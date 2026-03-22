@@ -19,26 +19,27 @@
   </view>
 
   <!-- Header -->
-    <view class="header">
+  <view class="header">
     <view class="header-top-row">
-        <view>
+      <view>
         <view class="header-eyebrow">
-            <view class="status-dot"></view>
-            <text class="status-text">{{cards.length}} active cards</text>
+          <view class="status-dot"></view>
+          <text class="status-text">{{cards.length}} active cards</text>
         </view>
         <text class="header-title">Deal Passport</text>
         <text class="header-sub">Your loyalty universe</text>
+        <text class="merchant-portal-link" bindtap="onViewAnalytics">Merchant Portal ↗</text>
+      </view>
+      <view class="header-actions">
+        <view class="icon-btn" bindtap="onViewSaved">
+          <text class="icon-btn-text">🔖</text>
         </view>
-        <view class="header-actions">
-            <view class="icon-btn" bindtap="onViewSaved">
-            <text class="icon-btn-text">🔖</text>
-            </view>
-            <view class="add-btn" bindtap="onAddCard">
-            <text class="add-btn-text">+</text>
-            </view>
+        <view class="add-btn" bindtap="onAddCard">
+          <text class="add-btn-text">+</text>
         </view>
-        </view>
+      </view>
     </view>
+  </view>
 
   <!-- Card Carousel -->
   <scroll-view class="card-scroll" scroll-x="true" show-scrollbar="false">
@@ -109,10 +110,11 @@
           bindtap="onToggleSave"
           data-dealid="{{item.id}}"
         >
-          <text class="bookmark-icon">{{savedDeals[item.id] ? '🔖' : '🔖'}}</text>
-          <text class="bookmark-text" style="color: {{savedDeals[item.id] ? cards[activeCardIndex].accentColor : '#333'}}">
-            {{savedDeals[item.id] ? 'Saved' : 'Save'}}
-          </text>
+          <text class="bookmark-icon">🔖</text>
+          <text
+            class="bookmark-text"
+            style="color: {{savedDeals[item.id] ? cards[activeCardIndex].accentColor : '#333'}}"
+          >{{savedDeals[item.id] ? 'Saved' : 'Save'}}</text>
         </view>
       </view>
     </view>

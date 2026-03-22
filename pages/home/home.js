@@ -70,7 +70,11 @@ Page({
   },
 
   onAddCard() {
-    wx.navigateTo({ url: '/pages/add-card/add-card' })
+    wx.navigateTo({ url: '/pages/browse-cards/browse-cards' })
+  },
+
+  onViewAnalytics() {
+    wx.navigateTo({ url: '/pages/analytics/analytics' })
   },
 
   onViewSaved() {

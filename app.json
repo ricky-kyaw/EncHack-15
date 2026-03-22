@@ -2,8 +2,10 @@
   "pages": [
     "pages/home/home",
     "pages/card-detail/card-detail",
+    "pages/browse-cards/browse-cards",
     "pages/add-card/add-card",
-    "pages/saved-deals/saved-deals"
+    "pages/saved-deals/saved-deals",
+    "pages/analytics/analytics"
   ],
   "window": {
     "backgroundTextStyle": "dark",

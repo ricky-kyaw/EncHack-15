@@ -1,0 +1,70 @@
+page { background: #030303; font-family: -apple-system, sans-serif; }
+.container { padding-bottom: 100rpx; }
+
+/* Header */
+.header { padding: 80rpx 36rpx 40rpx; }
+.header-eyebrow { display: flex; align-items: center; margin-bottom: 20rpx; }
+.live-dot {
+  width: 10rpx; height: 10rpx; border-radius: 50%;
+  background: #f87171; margin-right: 10rpx;
+  box-shadow: 0 0 8rpx #f8717155;
+}
+.live-text { font-size: 18rpx; color: #f87171; letter-spacing: 3rpx; font-weight: 600; }
+.merchant-hero { display: flex; align-items: center; }
+.merchant-logo-wrap {
+  width: 80rpx; height: 80rpx; border-radius: 20rpx;
+  display: flex; align-items: center; justify-content: center;
+  margin-right: 24rpx; flex-shrink: 0;
+}
+.merchant-logo { font-size: 40rpx; }
+.page-title { display: block; font-size: 44rpx; font-weight: 800; color: #fff; letter-spacing: -1rpx; }
+.page-sub { display: block; font-size: 22rpx; color: #2e2e2e; margin-top: 6rpx; }
+
+/* KPI */
+.kpi-scroll { width: 100%; padding: 0 0 8rpx; }
+.kpi-row { display: inline-flex; padding: 0 36rpx; gap: 16rpx; }
+.kpi-card {
+  background: #0d0d0d; border: 1rpx solid #1a1a1a;
+  border-radius: 20rpx; padding: 28rpx 32rpx;
+  display: flex; flex-direction: column; min-width: 180rpx;
+}
+.kpi-value { display: block; font-size: 44rpx; font-weight: 900; letter-spacing: -1rpx; }
+.kpi-label { display: block; font-size: 20rpx; color: #2e2e2e; margin-top: 6rpx; }
+
+/* Sections */
+.section { padding: 44rpx 36rpx 0; }
+.section-title { display: block; font-size: 26rpx; font-weight: 700; color: #fff; margin-bottom: 8rpx; }
+.section-sub { display: block; font-size: 21rpx; color: #2e2e2e; margin-bottom: 24rpx; line-height: 1.5; }
+
+/* Chart */
+.chart {
+  display: flex; align-items: flex-end;
+  height: 160rpx; gap: 12rpx;
+  background: #0d0d0d; border-radius: 16rpx;
+  padding: 20rpx 20rpx 0; border: 1rpx solid #111;
+  margin-top: 24rpx;
+}
+.chart-col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; }
+.bar-wrap { flex: 1; display: flex; align-items: flex-end; width: 100%; }
+.bar { width: 100%; border-radius: 4rpx 4rpx 0 0; min-height: 6rpx; }
+.bar-label { font-size: 18rpx; color: #333; padding: 8rpx 0 12rpx; }
+
+/* Deal performance */
+.deal-row { margin-bottom: 28rpx; }
+.deal-row-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10rpx; }
+.deal-row-title { font-size: 24rpx; font-weight: 600; color: #ccc; flex: 1; margin-right: 16rpx; }
+.deal-row-count { font-size: 24rpx; font-weight: 800; }
+.deal-bar-track { height: 6rpx; background: #111; border-radius: 3rpx; overflow: hidden; margin-bottom: 8rpx; }
+.deal-bar-fill { height: 100%; border-radius: 3rpx; }
+.deal-row-tag { font-size: 18rpx; color: #2e2e2e; }
+
+/* Cross-retail insight */
+.insight-card {
+  background: #0d0d0d;
+  border-radius: 20rpx; padding: 36rpx;
+  margin-top: 16rpx;
+}
+.insight-stat { display: block; font-size: 64rpx; font-weight: 900; letter-spacing: -2rpx; margin-bottom: 12rpx; }
+.insight-text { display: block; font-size: 26rpx; color: #555; line-height: 1.6; margin-bottom: 28rpx; }
+.insight-footer { border-top: 1rpx solid #1a1a1a; padding-top: 20rpx; }
+.insight-footer-text { font-size: 18rpx; color: #222; letter-spacing: 1rpx; }

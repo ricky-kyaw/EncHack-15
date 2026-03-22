@@ -33,9 +33,15 @@ Page({
   onClaim(e) {
     const title = e.currentTarget.dataset.title
     wx.showToast({
-      title: 'Deal saved!',
+      title: 'Deal claimed!',
       icon: 'success',
       duration: 1500
+    })
+  },
+
+  onViewAnalytics() {
+    wx.navigateTo({
+      url: `/pages/analytics/analytics?cardId=${this.data.card.id}`
     })
   }
 })
